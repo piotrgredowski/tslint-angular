@@ -1,59 +1,61 @@
+# Only for notes. Comments are breaking JSON - it won't be used as usual tslint.json
+
 {
   "rulesDirectory": ["codelyzer"],
   "rules": {
-    "arrow-return-shorthand": true,
-    "callable-types": true,
-    "class-name": true,
-    "comment-format": [true, "check-space"],
-    "curly": true,
-    "deprecation": {
+    "arrow-return-shorthand": true,                                     # ok
+    "callable-types": true,                                             # ok
+    "class-name": true,                                                 # ok
+    "comment-format": [true, "check-space"],                            # ok, consider "check-uppercase"
+    "curly": true,                                                      # ok
+    "deprecation": {                                                    # ok
       "severity": "warn"
     },
-    "eofline": true,
-    "forin": true,
-    "import-blacklist": [true, "rxjs", "rxjs/Rx"],
-    "import-spacing": true,
-    "indent": [true, "spaces"],
-    "interface-over-type-literal": true,
-    "label-position": true,
-    "max-classes-per-file": [true, 1],
-    "max-line-length": [true, 140],
-    "member-access": false,
-    "member-ordering": [
-      true,
+    "eofline": true,                                                    # ok
+    "forin": true,                                                      # idk, but maybe ok
+    "import-blacklist": [true, "rxjs", "rxjs/Rx"],                      # ok, we don't want whole modules, only specific methods
+    "import-spacing": true,                                             # ok
+    "indent": [true, "spaces"],                                         # ok, 4 or 2?
+    "interface-over-type-literal": true,                                # ok
+    "label-position": true,                                             # idk
+    "max-classes-per-file": [true, 1],                                  # hmm. maybe ok.
+    "max-line-length": [true, 140],                                     # not, limit to 100
+    "member-access": false,                                             # ok
+    "member-ordering": [                                                # ok, but https://angular.io/guide/styleguide#style-05-14
+      true,                                                             # alphabetical, need to redefine array: https://palantir.github.io/tslint/rules/member-ordering/
       {
         "order": ["static-field", "instance-field", "static-method", "instance-method"]
       }
     ],
-    "no-arg": true,
-    "no-bitwise": true,
-    "no-console": [true, "debug", "info", "time", "timeEnd", "trace"],
-    "no-construct": true,
-    "no-debugger": true,
-    "no-duplicate-super": true,
-    "no-empty": false,
-    "no-empty-interface": true,
-    "no-eval": true,
-    "no-inferrable-types": [true, "ignore-params"],
-    "no-misused-new": true,
-    "no-non-null-assertion": true,
-    "no-shadowed-variable": true,
-    "no-string-literal": false,
-    "no-string-throw": true,
-    "no-switch-case-fall-through": true,
-    "no-trailing-whitespace": true,
-    "no-unnecessary-initializer": true,
-    "no-unused-expression": true,
-    "no-use-before-declare": true,
-    "no-var-keyword": true,
-    "object-literal-sort-keys": false,
-    "one-line": [true, "check-open-brace", "check-catch", "check-else", "check-whitespace"],
-    "prefer-const": true,
-    "quotemark": [true, "single"],
-    "radix": true,
-    "semicolon": [true, "always"],
-    "triple-equals": [true, "allow-null-check"],
-    "typedef-whitespace": [
+    "no-arg": true,                                                     # ok
+    "no-bitwise": true,                                                 # ok
+    "no-console": [true, "debug", "info", "time", "timeEnd", "trace"],  # ok
+    "no-construct": true,                                               # ok
+    "no-debugger": true,                                                # ok
+    "no-duplicate-super": true,                                         # ok
+    "no-empty": false,                                                  # ok
+    "no-empty-interface": true,                                         # ok
+    "no-eval": true,                                                    # ok
+    "no-inferrable-types": [true, "ignore-params"],                     # ok
+    "no-misused-new": true,                                             # idk, but ok
+    "no-non-null-assertion": true,                                      # ok
+    "no-shadowed-variable": true,                                       # ok
+    "no-string-literal": false,                                         # ok
+    "no-string-throw": true,                                            # idk, but ok
+    "no-switch-case-fall-through": true,                                # ok
+    "no-trailing-whitespace": true,                                     # ok
+    "no-unnecessary-initializer": true,                                 # idk, but ok
+    "no-unused-expression": true,                                       # ok
+    "no-use-before-declare": true,                                      # meh, idk
+    "no-var-keyword": true,                                             # ok
+    "object-literal-sort-keys": false,                                  # idk, but ok
+    "one-line": [true, "check-open-brace", "check-catch", "check-else", "check-whitespace"], # ok
+    "prefer-const": true,                                               # ok
+    "quotemark": [true, "single"],                                      # ok
+    "radix": true,                                                      # ok
+    "semicolon": [true, "always"],                                      # ok
+    "triple-equals": [true, "allow-null-check"],                        # ok
+    "typedef-whitespace": [                                             # ok
       true,
       {
         "call-signature": "nospace",
@@ -63,23 +65,62 @@
         "variable-declaration": "nospace"
       }
     ],
-    "unified-signatures": true,
-    "variable-name": false,
-    "whitespace": [true, "check-branch", "check-decl", "check-operator", "check-separator", "check-type"],
+    "unified-signatures": true,                                         # idk, but ok
+    "variable-name": false,                                             # not, [true, 'check-format']
+    "whitespace": [true, "check-branch", "check-decl", "check-operator", "check-separator", "check-type"], # idk, but ok
 
-    "angular-whitespace": [true, "check-interpolation"],
-    "use-view-encapsulation": true,
-    "contextual-life-cycle": true,
-    "banana-in-box": true,
-    "no-output-on-prefix": true,
-    "use-input-property-decorator": true,
-    "use-output-property-decorator": true,
-    "use-host-property-decorator": true,
-    "no-input-rename": true,
-    "no-output-rename": true,
-    "use-life-cycle-interface": true,
-    "use-pipe-transform-interface": true,
-    "component-class-suffix": true,
-    "directive-class-suffix": true
+    "angular-whitespace": [true, "check-interpolation"],                # ok
+    "use-view-encapsulation": true,                                     # ok, I think
+    "contextual-life-cycle": true,                                      # ok
+    "banana-in-box": true,                                              # ok
+    "no-output-on-prefix": true,                                        # ok
+    "use-input-property-decorator": true,                               # ok
+    "use-output-property-decorator": true,                              # ok
+    "use-host-property-decorator": true,                                # ok
+    "no-input-rename": true,                                            # ok
+    "no-output-rename": true,                                           # ok
+    "use-life-cycle-interface": true,                                   # ok
+    "use-pipe-transform-interface": true,                               # ok
+    "component-class-suffix": true,                                     # not, [true, "Component", "View"]
+    "directive-class-suffix": true,                                     # idk, but ok
+
+    "decorator-not-allowed": true,                                      # could be good
+    "trackBy-function": true,                                           # check it out, could be good, https://netbasal.com/angular-2-improve-performance-with-trackby-cc147b5104e5
+    "no-attribute-parameter-decorator": true,                           # could be good
+    "no-unused-css": true,                                              # could be good, but check if rules applied by logic are considered as used
+    "use-pipe-decorator": true,                                         # could be good
+    "use-pipe-transform-interface": true,                               # could be good
+    "import-destructuring-spacing": true,                               # has to be
+
+# consider:
+no-parameter-reassignment
+only-arrow-functions
+"array-type": [true, "array-simple"],
+"align": [true, "parameters", "statements", "elements", "members",],
+completed-docs
+jsdoc-format
+newline-before-return
+newline-per-chained-call
+no-consecutive-blank-lines
+no-irregular-whitespace  # check it
+no-parameter-properties # check it withh services
+no-unnecessary-callback-wrapper 
+number-literal-format
+object-literal-key-quotes
+ordered-imports # !!
+prefer-switch
+prefer-template # !!
+space-within-parens
+switch-final-break
+no-duplicate-imports
+linebreak-style
+trailing-comma
+prefer-object-spread
+no-unused-variable
+no-unused-expression
+no-invalid-template-strings
+no-invalid-this
+no-conditional-assignment
+no-empty-interface
   }
 }
